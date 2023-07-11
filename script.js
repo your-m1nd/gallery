@@ -100,23 +100,23 @@ let json = [
       "info": "Как и Росомаха из Людей Икс, Дэдпул был подвергнут опытам по программе «Оружие Икс». Ученые попытались исцелить его рак, привив его клеткам способность к регенерации. Как и всегда в комиксах, что-то пошло не так, и Дэдпул остался изуродованным и психически нестабильным. Это единственный супергерой из списка, который однозначно не на стороне добра. Дэдпул наслаждается насилием. Первоначально появившись в основной Вселенной Marvel, он получил альтернативные варианты в других реальностях Мультивселенной. Что оставалось неизменным — его циничное, чёрное чувство юмора: за него Дэдпула прозвали «Болтливым наёмником»"
     }
   ];
+  let heroes = JSON.stringify(json);
+  let heroes1 = JSON.parse(heroes);
+  console.log(heroes1);
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  let heroes = JSON.parse(json);
-  console.log(heroes);
 
   let heroesContent = "";
-  for (let hero of heroes) {
-    heroesContent += `<div class="info"><h2>${hero.name}</h2>
-    <ul>${hero.universe}
-    <li>${hero.alterego}</li>
-    <li>${hero.occupation}</li>
-    <li>${hero.friends}</li>
-    <li>${hero.superpowers}</li>
-    <img scr="${hero.url}">
-    <li>${hero.info}</li>
-    </ul>
-    </div>`
+  for (let hero of heroes1) {
+    heroesContent += `<section class="info"><h2>${hero.name}</h2>
+    <p>Вселенная: <br>${hero.universe}</p>
+    <p>Альтер-эго: <br>${hero.alterego}</p>
+    <p>Род деятельности: <br>${hero.occupation}</p>
+    <p>Друзья: <br>${hero.friends}</p>
+    <p>Суперсила: <br>${hero.superpowers}</p>
+    <img src="${hero.url}" alt="${hero.name}">
+    <p>Биография: <br>${hero.info}</p>
+    </section>`
   }
   document.getElementById('infoContainer').innerHTML = heroesContent;
 })
