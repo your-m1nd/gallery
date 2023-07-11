@@ -23,3 +23,26 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
+.star {
+    display: flex;
+  }
+  
+  .star__item {
+    color: rgb(255, 202, 117);
+    margin: 2px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  
+  .star__item_select {
+    color: rgb(255, 195, 48);
+  }
+  
+  .star__item_active {
+    color: rgb(255, 195, 48);
+  }
+  
+  .star__item_active.star__item_select {
+    color: rgb(255, 134, 0);
+  }
